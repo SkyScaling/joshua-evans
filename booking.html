@@ -65,9 +65,9 @@
   .adv-proof{color:var(--text-2);font-size:13.5px;margin-top:12px;line-height:1.5}
   .adv-bio{color:var(--text-2);font-size:15px;line-height:1.65;margin:15px auto 0;max-width:600px}
   .adv-card.has-photo .adv-bio{margin-left:0;margin-right:0}
-  .adv-link{display:none;align-items:center;gap:6px;margin-top:16px;color:var(--accent-d);font-family:'Poppins';font-weight:700;font-size:14.5px;text-decoration:none}
-  .adv-link:hover{text-decoration:underline}
-  .adv-link svg{width:15px;height:15px}
+  .advisor-more{display:none;align-items:center;gap:6px;margin-top:16px;color:var(--accent-d);font-family:'Poppins';font-weight:700;font-size:14.5px;text-decoration:none}
+  .advisor-more:hover{text-decoration:underline}
+  .advisor-more svg{width:15px;height:15px}
 
   /* BOOKING */
   .book{background:linear-gradient(180deg,var(--panel-2),var(--panel));border:1px solid var(--border-strong);border-radius:24px;padding:clamp(26px,4vw,48px) clamp(16px,2.4vw,30px);margin-top:52px;box-shadow:0 20px 60px -34px rgba(13,42,28,0.18)}
@@ -235,7 +235,7 @@ src="https://www.facebook.com/tr?id=1100120314636630&ev=PageView&noscript=1"
         <div class="adv-title" id="adv-title"></div>
         <div class="adv-proof" id="adv-proof"></div>
         <p class="adv-bio" id="adv-bio"></p>
-        <a class="adv-link" id="adv-link" href="#" target="_blank" rel="noopener">Read more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        <a class="advisor-more" id="advisor-more" href="#" target="_blank" rel="noopener">Read more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
       </div>
     </div>
   </div>
@@ -302,7 +302,7 @@ src="https://www.facebook.com/tr?id=1100120314636630&ev=PageView&noscript=1"
       ph.src=C.ADVISOR_PHOTO; ph.style.display=''; document.getElementById('adv-card').classList.add('has-photo');
     }
     if(C.ADVISOR_ABOUT_URL){
-      var lk=document.getElementById('adv-link'); lk.href=C.ADVISOR_ABOUT_URL; lk.style.display='inline-flex';
+      var lk=document.getElementById('advisor-more'); lk.href=C.ADVISOR_ABOUT_URL; lk.style.display='inline-flex';
       var fn=((C.ADVISOR_NAME||'').trim().split(/\s+/)[0]||'');
       if(fn && ['a','your','the'].indexOf(fn.toLowerCase())===-1){ lk.childNodes[0].nodeValue='Read more about '+fn+' '; }
     }
