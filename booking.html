@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Your Call | FinanceBridges</title>
+<meta name="description" content="Pick a time. A quick, no-pitch call for licensed agents in Ottawa who know they're capable of more with the right team behind them.">
+<meta name="theme-color" content="#F4F8F5">
+<link rel="icon" type="image/svg+xml" href="https://storage.googleapis.com/msgsndr/YD07511ANI6LBQQguuTM/media/6764d80563c0fec34cd9d5b3.svg">
+<link rel="apple-touch-icon" href="https://storage.googleapis.com/msgsndr/YD07511ANI6LBQQguuTM/media/6764d80563c0fec34cd9d5b3.svg">
+
+<!-- ================= CONFIG: EDIT THESE ================= -->
+<script>
+  window.FB_CONFIG = {
+    LOGO_URL: "logo.svg",
+
+    BOOKING_URL: "https://link.skyscaling.com/widget/booking/p0V3tpKSomlacGApIckZ",
+    THANKYOU_URL: "thank-you.html",   /* page people land on AFTER they book (handled automatically) */
+
+    /* ---- THE ADVISOR (per client) ---- */
+    ADVISOR_NAME: "Joshua Evans",
+    ADVISOR_TITLE: "Team Leader & Licensed Advisor",
+    ADVISOR_PROOF: "7 years, Canadian Armed Forces  ·  Leads a team of 9 in Ottawa  ·  A real office, not Zoom-only",   /* short credibility line, separate items with "  ·  ". Leave "" to hide. */
+    ADVISOR_BIO: "Hi, I'm Joshua. After 7 years in the Canadian Armed Forces, I rebuilt my career in this industry from zero, so I know exactly how it feels to be licensed and left to figure it all out alone. Today I lead a team of 9 licensed agents in Ottawa, and we do it the way I learned in the military: real training, real structure, and real people in your corner. On our call I'll give you an honest look at what's possible, no pressure either way.",
+    ADVISOR_ABOUT_URL: "about.html",   /* link to this advisor's About Me page. Leave "" to hide the "Read more" link. */
+
+    /* Full profile is ON by default (photo + name + bio). An advisor can set this to false to lead with credentials only. */
+    SHOW_ADVISOR_PHOTO: true,
+    ADVISOR_PHOTO: "headshot.jpg"
+  };
+</script>
+<!-- ===================================================== -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#F4F8F5;--panel:#FFFFFF;--panel-2:#EDF4EF;--border:rgba(13,42,28,0.10);--border-strong:rgba(13,42,28,0.20);--accent:#12A150;--accent-2:#1FBF66;--accent-d:#0E8543;--accent-tint:rgba(18,161,80,0.10);--accent-glow:rgba(18,161,80,0.32);--text:#0C1F16;--text-2:#48594F;--text-3:#7C8A81;--radius:16px;--glow:0 20px 48px -22px var(--accent-glow)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;overflow-x:hidden}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;position:relative;overflow-x:hidden}
+  h1,h2,h3{font-family:'Poppins',sans-serif}
+  .bg-grid,.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0}
+  .bg-grid{background-image:linear-gradient(rgba(13,42,28,0.045) 1px,transparent 1px),linear-gradient(90deg,rgba(13,42,28,0.045) 1px,transparent 1px);background-size:54px 54px;-webkit-mask-image:radial-gradient(ellipse 95% 65% at 50% 0%,#000 25%,transparent 78%);mask-image:radial-gradient(ellipse 95% 65% at 50% 0%,#000 25%,transparent 78%)}
+  .bg-glow{background:radial-gradient(620px 420px at 18% 6%,rgba(18,161,80,0.14),transparent 68%),radial-gradient(620px 520px at 84% 96%,rgba(18,161,80,0.10),transparent 70%)}
+  .wrap{position:relative;z-index:1;max-width:940px;margin:0 auto;padding:0 22px 70px}
+  header{position:relative;z-index:1;width:100%;border-bottom:1px solid var(--border)}
+  .hdr-inner{max-width:1080px;margin:0 auto;padding:18px clamp(20px,4vw,40px);display:flex;align-items:center;justify-content:space-between}
+  .logo{display:flex;align-items:center;gap:10px;font-family:'Poppins';font-weight:800;font-size:18px;letter-spacing:-0.02em}
+  .logo img{height:33px;width:auto;display:block}.logo .fb{display:none;color:var(--text)}
+  .pill{font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent-d);border:1px solid var(--border-strong);background:var(--accent-tint);padding:8px 15px;border-radius:999px}
+  .eyebrow{text-align:center;color:var(--accent);font-family:'Poppins';font-weight:700;font-size:13px;letter-spacing:0.22em;text-transform:uppercase;margin:52px 0 18px}
+  h1.hero{font-family:'Poppins';font-weight:800;text-align:center;font-size:clamp(36px,5.6vw,52px);line-height:1.06;letter-spacing:-0.03em;max-width:900px;margin:0 auto}
+  h1.hero .a{color:var(--accent)}
+  .lead{text-align:center;color:var(--text-2);font-size:clamp(16px,2.2vw,18px);line-height:1.7;max-width:620px;margin:22px auto 0}
+  .lead b{color:var(--text);font-weight:600}
+
+  /* ADVISOR */
+  .advisor{margin-top:48px}
+  .adv-eyebrow{margin:0 0 18px}
+  .adv-card{border:1px solid var(--border-strong);background:linear-gradient(180deg,var(--panel-2),var(--panel));border-radius:20px;padding:34px 30px;text-align:center;box-shadow:0 16px 46px -30px rgba(13,42,28,0.2)}
+  .adv-card.has-photo{display:flex;gap:30px;align-items:center;text-align:left}
+  .adv-photo{width:188px;height:188px;flex:none;border-radius:16px;object-fit:cover;border:1px solid var(--border);background:var(--panel-2)}
+  .adv-name{font-family:'Poppins';font-weight:800;font-size:clamp(21px,3vw,25px);letter-spacing:-0.02em;line-height:1.15}
+  .adv-title{color:var(--accent-d);font-family:'Poppins';font-weight:700;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;margin-top:7px}
+  .adv-proof{color:var(--text-2);font-size:13.5px;margin-top:12px;line-height:1.5}
+  .adv-bio{color:var(--text-2);font-size:15px;line-height:1.65;margin:15px auto 0;max-width:600px}
+  .adv-card.has-photo .adv-bio{margin-left:0;margin-right:0}
+  .adv-link{display:none;align-items:center;gap:6px;margin-top:16px;color:var(--accent-d);font-family:'Poppins';font-weight:700;font-size:14.5px;text-decoration:none}
+  .adv-link:hover{text-decoration:underline}
+  .adv-link svg{width:15px;height:15px}
+
+  /* BOOKING */
+  .book{background:linear-gradient(180deg,var(--panel-2),var(--panel));border:1px solid var(--border-strong);border-radius:24px;padding:clamp(26px,4vw,48px) clamp(16px,2.4vw,30px);margin-top:52px;box-shadow:0 20px 60px -34px rgba(13,42,28,0.18)}
+  .book h2{text-align:center;font-family:'Poppins';font-weight:800;font-size:clamp(28px,4vw,38px);line-height:1.1;letter-spacing:-0.02em;padding:0 8px}
+  .book h2 .a{color:var(--accent)}
+  .book .bsub{text-align:center;color:var(--text-2);font-size:15px;line-height:1.6;max-width:540px;margin:14px auto 0}
+  #booking-mount{margin-top:26px}
+  #booking-mount iframe{width:100%;min-height:300px;border:none;border-radius:var(--radius);background:#fff;display:block}
+  #booking-fallback{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:44px 24px;text-align:center;color:var(--text-2);font-family:'Inter'}
+  #booking-fallback a{color:var(--accent-d);font-weight:700}
+
+  /* SECTIONS */
+  section{padding:52px 0 0;border-top:1px solid var(--border);margin-top:58px}
+  .sec-title{text-align:center;font-family:'Poppins';font-weight:800;font-size:clamp(30px,4.4vw,40px);letter-spacing:-0.02em;line-height:1.1;text-wrap:balance;max-width:820px;margin:0 auto}
+  .sec-title .a{color:var(--accent)}
+  .sec-sub{text-align:center;color:var(--text-3);font-size:15px;margin:12px auto 0;max-width:560px;line-height:1.6}
+
+  /* COMPARISON */
+  .calc-card{margin:38px auto 0;border:1px solid rgba(255,255,255,0.14);background:linear-gradient(95deg,#1DBA66 0%,#13A453 48%,#0A7638 100%);border-radius:20px;padding:34px 30px;box-shadow:0 22px 54px -26px var(--accent-glow)}
+  .calc-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:stretch}
+  .cbox{border-radius:var(--radius);padding:28px 24px;display:flex;flex-direction:column}
+  .cbox-out{background:#101C15;border:1px solid rgba(255,255,255,0.08)}
+  .cbox-in{background:#F4F1E6;border:1px solid rgba(13,42,28,0.16)}
+  .cbox-h{display:flex;align-items:center;gap:9px;font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:14px}
+  .cbox-h i{width:17px;height:17px;flex:none;border-radius:50%;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:10px;font-weight:800;letter-spacing:0}
+  .cbox-out .cbox-h{color:#8FA69A}
+  .cbox-out .cbox-h i{background:rgba(249,138,128,0.16);color:#F98A80}
+  .cbox-in .cbox-h{color:var(--accent-d)}
+  .cbox-in .cbox-h i{background:var(--accent-tint);color:var(--accent-d)}
+  .cbig{font-family:'Poppins';font-weight:800;font-size:clamp(28px,4.6vw,38px);letter-spacing:-0.02em;line-height:1.05}
+  .cbox-out .cbig{color:#fff}
+  .cbox-in .cbig{color:var(--accent-d)}
+  .cnote{font-size:13.5px;line-height:1.55;margin-top:10px}
+  .cbox-out .cnote{color:#A9BCB1}
+  .cbox-in .cnote{color:var(--text-2)}
+  .clist{margin-top:20px}
+  .crow{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:13px;padding:10px 0}
+  .crow b{font-family:'Poppins';font-weight:800;font-size:14.5px;letter-spacing:-0.01em}
+  .cbox-out .crow{color:#A9BCB1;border-top:1px solid rgba(255,255,255,0.08)}
+  .cbox-out .crow b{color:#F98A80}
+  .cbox-in .crow{color:var(--text-2);border-top:1px solid var(--border)}
+  .cbox-in .crow b{color:var(--accent)}
+  .cvs{align-self:center;width:46px;height:46px;flex:none;border-radius:50%;background:#fff;border:2px solid rgba(255,255,255,0.6);color:var(--accent-d);font-family:'Poppins';font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(6,40,22,0.28)}
+  .calc-dis{text-align:center;color:rgba(255,255,255,0.72);font-size:12.5px;line-height:1.6;margin:26px auto 0;max-width:660px}
+  .calc-dis b{color:#fff;font-weight:700}
+
+  /* STEPS */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:38px}
+  .step{border:1px solid var(--border);background:var(--panel);border-radius:var(--radius);padding:28px 24px;box-shadow:0 4px 14px -10px rgba(13,42,28,0.12)}
+  .step .snum{width:34px;height:34px;border-radius:10px;background:var(--accent-tint);color:var(--accent-d);display:flex;align-items:center;justify-content:center;font-family:'Poppins';font-weight:800;font-size:15px;margin-bottom:16px}
+  .step h3{font-family:'Poppins';font-weight:700;font-size:18px;margin-bottom:9px}
+  .step p{color:var(--text-2);font-size:14.5px;line-height:1.6}
+  .reassure{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;margin-top:32px;color:var(--text-2);font-size:14px}
+  .reassure span{display:inline-flex;align-items:center;gap:8px}
+  .reassure svg{width:17px;height:17px;color:var(--accent);flex:none}
+
+  .book-note{display:flex;gap:8px;align-items:flex-start;justify-content:center;text-align:center;color:var(--text-3);font-size:13px;line-height:1.5;margin-top:18px}
+  .book-note svg{width:15px;height:15px;color:var(--accent);flex:none;margin-top:2px}
+
+  /* FAQ */
+  .faq{max-width:720px;margin:36px auto 0;display:flex;flex-direction:column;gap:12px}
+  .fq{border:1px solid var(--border);background:var(--panel);border-radius:14px;padding:20px 22px;box-shadow:0 3px 12px -9px rgba(13,42,28,0.14)}
+  .fq h4{font-family:'Poppins';font-weight:700;font-size:16px;margin-bottom:7px;display:flex;gap:10px;align-items:flex-start}
+  .fq h4 .qm{color:var(--accent);flex:none}
+  .fq p{color:var(--text-2);font-size:14.5px;line-height:1.6;padding-left:26px}
+
+  footer{text-align:center;color:var(--text-3);font-size:12.5px;padding:44px 0 0;border-top:1px solid var(--border);margin-top:58px}
+  footer a{color:var(--text-2);text-decoration:none}
+
+  @media (max-width:700px){
+    .hdr-inner{padding-top:21px;padding-bottom:21px}
+    .logo img{height:27px}
+    .steps{grid-template-columns:1fr;margin-top:26px}
+    .faq{margin-top:24px}
+    .eyebrow{margin:40px 0 14px}
+    .calc-card{margin-top:26px;padding:24px 18px}
+    .calc-grid{grid-template-columns:1fr;gap:10px}
+    .cvs{margin:2px auto}
+    .book{margin-top:34px}
+    section{padding:38px 0 0;margin-top:40px}
+    .advisor{margin-top:36px}
+    .adv-card.has-photo{flex-direction:column;text-align:center}
+    .adv-card.has-photo .adv-bio{margin-left:auto;margin-right:auto}
+    .adv-photo{width:130px;height:130px}
+  }
+</style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1100120314636630');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1100120314636630&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7KHYYF9BFV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-7KHYYF9BFV');
+</script>
+<!-- End Google Analytics -->
+</head>
+<body>
+<div class="bg-grid"></div><div class="bg-glow"></div>
+
+<header><div class="hdr-inner">
+  <div class="logo"><img id="logo" alt="FinanceBridges" src=""><span class="fb">FinanceBridges</span></div>
+  <span class="pill">Final Step</span>
+</div></header>
+
+<div class="wrap">
+
+  <div class="eyebrow">&lt; Book your call &gt;</div>
+  <h1 class="hero">Your License Was Never <span class="a">The Problem.</span></h1>
+  <p class="lead">If you're a licensed agent in Ottawa grinding it out alone, you already know this. You passed the exams, you do the work, but nobody ever taught you how to actually build a practice. No mentorship, no structure, nobody to call when a case gets complicated. This is a quick, <b>no-pitch call</b> to see what changes with a real team behind you. Grab a time below.</p>
+
+  <section>
+    <div class="sec-title">Doing It Alone vs <span class="a">Doing It With A Team</span></div>
+    <div class="sec-sub">The difference was never your license. It's who's in your corner.</div>
+    <div class="calc-card">
+      <div class="calc-grid">
+        <div class="cbox cbox-out">
+          <div class="cbox-h"><i>&#10005;</i>On your own</div>
+          <div class="cbig">Guessing</div>
+          <div class="cnote">You got licensed, then got left to figure it out. Every month you spend guessing your way through is momentum, and income, you never get back.</div>
+          <div class="clist">
+            <div class="crow"><span>Real training after you got licensed</span><b>&#10005;</b></div>
+            <div class="crow"><span>Someone to call on a tough case</span><b>&#10005;</b></div>
+            <div class="crow"><span>A system beyond your warm market</span><b>&#10005;</b></div>
+          </div>
+        </div>
+        <div class="cvs">VS</div>
+        <div class="cbox cbox-in">
+          <div class="cbox-h"><i>&#10003;</i>With Joshua's team</div>
+          <div class="cbig">Guided</div>
+          <div class="cnote">Real training, real structure, and people who've done it. The way Joshua learned it in the military, now built for licensed agents in Ottawa.</div>
+          <div class="clist">
+            <div class="crow"><span>Hands-on training and mentorship</span><b>&#10003;</b></div>
+            <div class="crow"><span>Weekly, in-person support</span><b>&#10003;</b></div>
+            <div class="crow"><span>A real Ottawa office, not Zoom-only</span><b>&#10003;</b></div>
+          </div>
+        </div>
+      </div>
+      <p class="calc-dis"><b>No hype and no income promises.</b> Just an honest look at what changes when you stop doing this alone. Whether it's a fit is exactly what the call is for.</p>
+    </div>
+  </section>
+
+  <div class="advisor">
+    <div class="eyebrow adv-eyebrow">&lt; Who you'll be talking to &gt;</div>
+    <div class="adv-card" id="adv-card">
+      <img class="adv-photo" id="adv-photo" alt="" style="display:none">
+      <div class="adv-body">
+        <div class="adv-name" id="adv-name"></div>
+        <div class="adv-title" id="adv-title"></div>
+        <div class="adv-proof" id="adv-proof"></div>
+        <p class="adv-bio" id="adv-bio"></p>
+        <a class="adv-link" id="adv-link" href="#" target="_blank" rel="noopener">Read more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="book">
+    <h2>Grab 15 Minutes. <span class="a">No Pitch, No Pressure.</span></h2>
+    <p class="bsub">Pick a time that works for you. It's a quick, honest call to see if this is the right fit for where you're at, nothing more.</p>
+    <div id="booking-mount">
+      <div id="booking-fallback">Add your <b>BOOKING_URL</b> in the config to load the calendar here. &nbsp;<a href="#" id="fallback-link" target="_blank" rel="noopener">Open calendar</a></div>
+    </div>
+    <p class="book-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/></svg>You'll get a confirmation email and a reminder before your call, so you won't miss it.</p>
+  </div>
+
+  <section>
+    <div class="sec-title">What Happens <span class="a">On The Call</span></div>
+    <div class="sec-sub">No pitch. Just an honest conversation about where you're at and what's possible.</div>
+    <div class="steps">
+      <div class="step"><div class="snum">1</div><h3>We talk about where you're at</h3><p>You'll walk Joshua through your situation: how long you've been licensed, what's working, and what's been missing.</p></div>
+      <div class="step"><div class="snum">2</div><h3>You see how the team works</h3><p>Joshua shows you exactly what the training, structure, and in-person support look like, and how agents on the team actually get better.</p></div>
+      <div class="step"><div class="snum">3</div><h3>You decide if it's a fit</h3><p>Zero pressure. If it's a fit for both of you, great. If not, you'll still walk away with a clear picture of what's possible.</p></div>
+    </div>
+    <div class="reassure">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>About 15 minutes</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>No pitch</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>You decide if it's a fit</span>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-title">Questions, <span class="a">Answered</span></div>
+    <div class="sec-sub">Everything agents usually want to know before they book.</div>
+    <div class="faq">
+      <div class="fq"><h4><span class="qm">Q.</span>Do I have to leave my current company to have this call?</h4><p>Not at all. This is just a conversation. Plenty of agents book a call to see what else is out there before they decide anything.</p></div>
+      <div class="fq"><h4><span class="qm">Q.</span>Is this one of those recruit-everyone opportunities?</h4><p>No. This is for people who are already licensed. Joshua leads a real team with real training and a real office in Ottawa, focused on helping you build your practice.</p></div>
+      <div class="fq"><h4><span class="qm">Q.</span>How long does the call take?</h4><p>About 15 minutes on the phone. Quick and honest, at a time you pick.</p></div>
+      <div class="fq"><h4><span class="qm">Q.</span>What if I already have my license?</h4><p>That's exactly who this is for. This is for licensed agents who know they're capable of more with the right people behind them.</p></div>
+      <div class="fq"><h4><span class="qm">Q.</span>Will I be pressured to join?</h4><p>No. Joshua's job is to see if it's a fit for both of you. If it's not, no hard feelings.</p></div>
+    </div>
+  </section>
+
+  <footer>
+    <div>FinanceBridges &nbsp;&middot;&nbsp; <a href="mailto:info@financebridges.com">info@financebridges.com</a></div>
+    <div style="margin-top:10px">Building careers for licensed agents in Ottawa &#127809;</div>
+  </footer>
+</div>
+
+<script src="https://link.skyscaling.com/js/form_embed.js"></script>
+<script>
+(function(){
+  var C=window.FB_CONFIG||{};
+  var logo=document.getElementById('logo');
+  if(C.LOGO_URL){logo.src=C.LOGO_URL;} logo.onerror=function(){logo.style.display='none';document.querySelector('.logo .fb').style.display='inline-block';}; if(!C.LOGO_URL){logo.onerror();}
+
+  /* advisor intro */
+  (function(){
+    function put(id,val){ var el=document.getElementById(id); if(!el) return; if(val){ el.textContent=val; } else { el.style.display='none'; } }
+    put('adv-name', C.ADVISOR_NAME);
+    put('adv-title', C.ADVISOR_TITLE);
+    put('adv-proof', C.ADVISOR_PROOF);
+    put('adv-bio', C.ADVISOR_BIO);
+    if(C.SHOW_ADVISOR_PHOTO && C.ADVISOR_PHOTO){
+      var ph=document.getElementById('adv-photo');
+      ph.onerror=function(){ ph.style.display='none'; document.getElementById('adv-card').classList.remove('has-photo'); };
+      ph.src=C.ADVISOR_PHOTO; ph.style.display=''; document.getElementById('adv-card').classList.add('has-photo');
+    }
+    if(C.ADVISOR_ABOUT_URL){
+      var lk=document.getElementById('adv-link'); lk.href=C.ADVISOR_ABOUT_URL; lk.style.display='inline-flex';
+      var fn=((C.ADVISOR_NAME||'').trim().split(/\s+/)[0]||'');
+      if(fn && ['a','your','the'].indexOf(fn.toLowerCase())===-1){ lk.childNodes[0].nodeValue='Read more about '+fn+' '; }
+    }
+  })();
+
+  /* calendar embed (UTM + prefill passthrough from URL) */
+  function buildBookingSrc(){
+    var base=C.BOOKING_URL||""; if(!base) return "";
+    var cur=new URLSearchParams(window.location.search), qp=new URLSearchParams();
+    cur.forEach(function(val,key){ qp.set(key,val); });
+    var q=qp.toString();
+    return q ? base+(base.indexOf('?')>-1?'&':'?')+q : base;
+  }
+  var mount=document.getElementById('booking-mount');
+  if(C.BOOKING_URL){
+    var id=(C.BOOKING_URL.split('/').pop()||'cal').replace(/[^\w-]/g,'');
+    mount.innerHTML='<iframe src="'+buildBookingSrc()+'" scrolling="no" id="'+id+'_book" title="Book your call"></iframe>';
+  } else {
+    var fl=document.getElementById('fallback-link'); if(fl) fl.href=C.BOOKING_URL||"#";
+  }
+
+  /* ---------- Auto-size the calendar + redirect to thank-you on booking ----------
+     GHL's calendar iframe posts an ARRAY to the parent: ["highlevel.setHeight",{height}]
+     to size it, and ["msgsndr-booking-complete"] when a booking finishes. */
+  var redirected=false;
+  function goThankYou(){
+    if(redirected) return; redirected=true;
+    var u=C.THANKYOU_URL||"thank-you.html";
+    try{ window.top.location.href=u; }catch(e){ window.location.href=u; }
+  }
+  window.addEventListener('message', function(ev){
+    var d=ev.data, booked=false;
+    if(Object.prototype.toString.call(d)==='[object Array]'){ if(d[0]==='highlevel.setHeight'&&d[1]&&d[1].height){var _if=document.querySelector('#booking-mount iframe');if(_if)_if.style.height=(d[1].height+40)+'px';} booked = (d[0]==='msgsndr-booking-complete'); }
+    else if(typeof d==='string'){ booked = d.indexOf('msgsndr-booking-complete')>-1; if(!booked){ try{ d=JSON.parse(d); }catch(_){} } }
+    if(!booked && d && typeof d==='object' && Object.prototype.toString.call(d)!=='[object Array]'){
+      var t=((d.type||d.event||d.action||"")+"").toLowerCase();
+      booked = t.indexOf('booking-complete')>-1 || (t.indexOf('appointment')>-1 && (t.indexOf('book')>-1||t.indexOf('confirm')>-1||t.indexOf('sched')>-1));
+    }
+    if(booked){ goThankYou(); }
+  }, false);
+})();
+</script>
+</body>
+</html>
